@@ -1,33 +1,42 @@
+import DeleteConfirmation from './components/DeleteConfirmation.tsx'
+import Modal, { ModalRef } from './components/Modal.tsx'
+import Places from './components/Places.tsx'
+import { AVAILABLE_PLACES } from './data.ts'
 
-const  App = ()=> {
-  const modal = useRef();
-  const selectedPlace = useRef();
-  const [pickedPlaces, setPickedPlaces] = useState([]);
+import logo from './assets/logo.png'
+import { useRef, useState } from 'react'
+import { Place } from './models/place.ts'
 
-  function handleStartRemovePlace(id) {
-    modal.current.open();
-    selectedPlace.current = id;
+const App = () => {
+  const modal = useRef<ModalRef>(null)
+  const selectedPlace = useRef<string>()
+  const [pickedPlaces, setPickedPlaces] = useState<Place[]>([])
+
+  const handleStartRemovePlace = (id: string) => {
+    modal.current!.open()
+    selectedPlace.current = id
   }
 
-  function handleStopRemovePlace() {
-    modal.current.close();
+  const handleStopRemovePlace = () => {
+    modal.current!.close()
   }
 
-  function handleSelectPlace(id) {
+  const handleSelectPlace = (id: string) => {
     setPickedPlaces((prevPickedPlaces) => {
-      if (prevPickedPlaces.some((place) => place.id === id)) {
-        return prevPickedPlaces;
+      if (prevPickedPlaces.some((p) => p.id === id)) {
+        return prevPickedPlaces
       }
-      const place = AVAILABLE_PLACES.find((place) => place.id === id);
-      return [place, ...prevPickedPlaces];
-    });
+
+      const place = AVAILABLE_PLACES.find((p) => p.id === id)!
+      return [place, ...prevPickedPlaces]
+    })
   }
 
-  function handleRemovePlace() {
-    setPickedPlaces((prevPickedPlaces) =>
-      prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
-    );
-    modal.current.close();
+  const handleRemovePlace = () => {
+    setPickedPlaces((previous) =>
+      previous.filter((p) => p.id !== selectedPlace.current)
+    )
+    modal.current!.close()
   }
 
   return (
@@ -40,7 +49,7 @@ const  App = ()=> {
       </Modal>
 
       <header>
-        <img src={logoImg} alt="Stylized globe" />
+        <img src={logo} alt="Stylized globe" />
         <h1>PlacePicker</h1>
         <p>
           Create your personal collection of places you would like to visit or
@@ -61,7 +70,7 @@ const  App = ()=> {
         />
       </main>
     </>
-  );
+  )
 }
 
 export default App

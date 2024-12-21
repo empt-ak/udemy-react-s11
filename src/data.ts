@@ -1,23 +1,24 @@
-import forestWaterfallImg from './assets/forest-waterfall.jpg';
-import desertDunes from './assets/desert-dunes.jpg';
-import majesticMountains from './assets/majestic-mountains.jpg';
-import caribbeanBeachImg from './assets/caribbean-beach.jpg';
-import ruinsImg from './assets/ruins.jpg';
-import rainforestImg from './assets/rainforest.jpg';
-import northernLightsImg from './assets/northern-lights.jpg';
-import japaneseTempleImg from './assets/japanese-temple.jpg';
-import greatBarrierReefImg from './assets/great-barrier-reef.jpg';
-import parisianStreetsImg from './assets/parisian-streets.jpg';
-import grandCanyonImg from './assets/grand-canyon.jpg';
-import venetianCanalsImg from './assets/venetian-canals.jpg';
-import tajMahalImg from './assets/taj-mahal.jpg';
-import keralaBackwatersImg from './assets/kerala-backwaters.jpg';
-import africanSavannaImg from './assets/african-savanna.jpg';
-import victoriaFallsImg from './assets/victoria-falls.jpg';
-import machuPicchuImg from './assets/machu-picchu.jpg';
-import amazonRiverImg from './assets/amazon-river.jpg';
+import forestWaterfallImg from './assets/forest-waterfall.jpg'
+import desertDunes from './assets/desert-dunes.jpg'
+import majesticMountains from './assets/majestic-mountains.jpg'
+import caribbeanBeachImg from './assets/caribbean-beach.jpg'
+import ruinsImg from './assets/ruins.jpg'
+import rainforestImg from './assets/rainforest.jpg'
+import northernLightsImg from './assets/northern-lights.jpg'
+import japaneseTempleImg from './assets/japanese-temple.jpg'
+import greatBarrierReefImg from './assets/great-barrier-reef.jpg'
+import parisianStreetsImg from './assets/parisian-streets.jpg'
+import grandCanyonImg from './assets/grand-canyon.jpg'
+import venetianCanalsImg from './assets/venetian-canals.jpg'
+import tajMahalImg from './assets/taj-mahal.jpg'
+import keralaBackwatersImg from './assets/kerala-backwaters.jpg'
+import africanSavannaImg from './assets/african-savanna.jpg'
+import victoriaFallsImg from './assets/victoria-falls.jpg'
+import machuPicchuImg from './assets/machu-picchu.jpg'
+import amazonRiverImg from './assets/amazon-river.jpg'
+import { Place } from './models/place.ts'
 
-export const AVAILABLE_PLACES = [
+export const AVAILABLE_PLACES: Place[] = [
   {
     id: 'p1',
     title: 'Forest Waterfall',
@@ -198,4 +199,4 @@ export const AVAILABLE_PLACES = [
     lat: -3.4653,
     lon: -58.38,
   },
-];
+]

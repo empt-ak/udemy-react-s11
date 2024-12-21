@@ -1,4 +1,9 @@
-export default function DeleteConfirmation({ onConfirm, onCancel }) {
+export interface DeleteConfirmation {
+  onConfirm: () => void
+  onCancel: () => void
+}
+
+const DeleteConfirmation = ({ onConfirm, onCancel }: DeleteConfirmation) => {
   return (
     <div id="delete-confirmation">
       <h2>Are you sure?</h2>
@@ -12,5 +17,7 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
         </button>
       </div>
     </div>
-  );
+  )
 }
+
+export default DeleteConfirmation
